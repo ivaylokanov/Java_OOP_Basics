@@ -65,7 +65,7 @@ public class Main {
         if (checkId(id)) {
             accounts.get(id).deposit(amount);
         } else {
-            System.out.printf("Account does not exist%n");
+            System.out.printf(" Account does not exist%n");
         }
     }
 
