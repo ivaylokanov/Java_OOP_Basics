@@ -20,11 +20,20 @@ public class Person {
         this.age= DEFAULT_AGE;
     }
 
+    public double getSalary() {
+        return this.salary;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %.2f %s %d",this.name,this.salary,this.email,this.age);
     }
 }
