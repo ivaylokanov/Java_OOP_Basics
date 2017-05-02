@@ -1,4 +1,4 @@
-package pr2_salaryIncrease;
+package pr02_salaryIncrease;
 
 import java.io.BufferedReader;
 import java.io.IOException;

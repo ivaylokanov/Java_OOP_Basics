@@ -1,4 +1,4 @@
-package pr2_salaryIncrease;
+package pr02_salaryIncrease;
 
 public class Person {
     private String firstName;
