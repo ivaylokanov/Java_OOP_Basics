@@ -1,50 +1,67 @@
 package pr04_shoppingSpree;
 
+
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Person {
-    private String personName;
-    private double money;
+
+    private String name;
+    private int money;
     private List<Product> products;
 
-    public Person(String personName, double money) {
-        this.personName = personName;
-        this.money = money;
+    public Person(String name, int money) {
+        this.setName(name);
+        this.setMoney(money);
         this.products = new ArrayList<>();
     }
 
-    private void setMoney(double money) {
-        this.money = this.money-money;
-    }
-
-    public void buyProduct(Product productName) {
-        if (this.money<productName.getProductCost()){
-            System.out.printf("%s can't afford %s%n",this.personName,productName.getProductName());
+    public void tryPurchase(Product product) {
+        if (this.getMoney() >= product.getCost()) {
+            this.setMoney(this.getMoney() - product.getCost());
+            this.addProduct(product);
         } else {
-            products.add(productName);
-            setMoney(productName.getProductCost());
-            System.out.printf("%s bought %s%n",this.personName,productName.getProductName());
+            throw new IllegalStateException(String.format("%s can't afford %s", this.getName(), product.getName()));
         }
-    }
-
-    public List<Product> getProducts() {
-        return this.products;
-    }
-
-    public String getPersonName() {
-        return this.personName;
     }
 
     @Override
     public String toString() {
         if (this.getProducts().size() == 0) {
-            return this.getPersonName() + " - Nothing bought";
+            return this.getName() + " - Nothing bought";
         }
-        return this.getPersonName() + " - " + String.join(", ", this.getProducts().stream().
-                map(Object::toString).collect(Collectors.toList()));
+        return this.getName() + " - " + String.join(", ", this.getProducts().stream().map(Object::toString).collect(Collectors.toList()));
+    }
+
+    private void addProduct(Product product) {
+        this.products.add(product);
+    }
+
+    private String getName() {
+        return name;
+    }
+
+    private int getMoney() {
+        return money;
+    }
+
+    public List<Product> getProducts() {
+        return Collections.unmodifiableList(this.products);
+    }
+
+    private void setName(String name) {
+        if (name == null || name.trim().length() == 0) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        this.name = name;
+    }
+
+    private void setMoney(int money) {
+        if (money < 0) {
+            throw new IllegalArgumentException("Money cannot be negative");
+        }
+        this.money = money;
     }
 }
