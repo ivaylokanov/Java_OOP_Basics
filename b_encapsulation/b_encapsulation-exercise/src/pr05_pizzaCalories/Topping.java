@@ -16,16 +16,16 @@ public class Topping {
 
     private void setType(String type) {
         switch (type) {
-            case "Meat":
+            case "meat":
                 toppingCalories*=1.2;
                 break;
-            case "Veggies":
+            case "veggies":
                 toppingCalories*=0.8;
                 break;
-            case "Cheese":
+            case "cheese":
                 toppingCalories*=1.1;
                 break;
-            case "Sauce":
+            case "sauce":
                 toppingCalories*=0.9;
                 break;
             default:

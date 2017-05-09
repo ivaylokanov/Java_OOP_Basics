@@ -17,10 +17,10 @@ public class Dough{
 
     private void setFlourType(String flourType) {
         switch (flourType) {
-            case "White":
+            case "white":
                 doughCalories*=1.5;
                 break;
-            case "Wholegrain":
+            case "wholegrain":
                 doughCalories*=1.0;
                 break;
             default:
@@ -31,13 +31,13 @@ public class Dough{
 
     private void setBakingTechnique(String bakingTechnique) {
         switch (bakingTechnique) {
-            case "Crispy":
+            case "crispy":
                 doughCalories*=0.9;
                 break;
-            case "Chewy":
+            case "chewy":
                 doughCalories*=1.1;
                 break;
-            case "Homemade":
+            case "homemade":
              doughCalories*=1.0;
                 break;
             default:
@@ -55,7 +55,7 @@ public class Dough{
     }
 
     public double getDoughCalories() {
-        totalDoughCalories += this.totalDoughCalories;
+        totalDoughCalories += this.doughCalories;
         return totalDoughCalories;
     }
 }

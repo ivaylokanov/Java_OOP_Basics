@@ -38,8 +38,7 @@ public class Pizza {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("0.00");
-        return this.getName() + " - " + df.format(this.getTotalCalories());
+        return this.getName();
     }
 }
 
