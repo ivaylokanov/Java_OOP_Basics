@@ -66,7 +66,7 @@ public class Main {
                     if (benders.get("Air") != null) {
                         totalBendersPower = benders.get("Air").stream().mapToDouble(x -> x.getPower()).sum();
                         if (monuments.get("Air") != null) {
-                            totalMonuments = monuments.get("Air").stream().mapToDouble(x -> x.getAffinity()).sum();
+                            totalMonuments = monuments.get("Air").stream().mapToDouble(x -> x.getTotal()).sum();
                         }
                         totalBendersPower = totalBendersPower + (totalBendersPower / 100) * totalMonuments;
                         if (totalBendersPower > checkTotal) {
@@ -77,7 +77,7 @@ public class Main {
                     if (benders.get("Water") != null) {
                         totalBendersPower = benders.get("Water").stream().mapToDouble(x -> x.getPower()).sum();
                         if (monuments.get("Water") != null) {
-                            totalMonuments = monuments.get("Water").stream().mapToDouble(x -> x.getAffinity()).sum();
+                            totalMonuments = monuments.get("Water").stream().mapToDouble(x -> x.getTotal()).sum();
                         }
                         totalBendersPower = totalBendersPower + (totalBendersPower / 100) * totalMonuments;
                         if (totalBendersPower > checkTotal) {
@@ -88,7 +88,7 @@ public class Main {
                     if (benders.get("Fire") != null) {
                         totalBendersPower = benders.get("Fire").stream().mapToDouble(x -> x.getPower()).sum();
                         if (monuments.get("Fire") != null) {
-                            totalMonuments = monuments.get("Fire").stream().mapToDouble(x -> x.getAffinity()).sum();
+                            totalMonuments = monuments.get("Fire").stream().mapToDouble(x -> x.getTotal()).sum();
                         }
                         totalBendersPower = totalBendersPower + (totalBendersPower / 100) * totalMonuments;
                         if (totalBendersPower > checkTotal) {
@@ -99,7 +99,7 @@ public class Main {
                     if (benders.get("Earth") != null) {
                         totalBendersPower = benders.get("Earth").stream().mapToDouble(x -> x.getPower()).sum();
                         if (monuments.get("Earth") != null) {
-                            totalMonuments = monuments.get("Earth").stream().mapToDouble(x -> x.getAffinity()).sum();
+                            totalMonuments = monuments.get("Earth").stream().mapToDouble(x -> x.getTotal()).sum();
                         }
                         totalBendersPower = totalBendersPower + (totalBendersPower / 100) * totalMonuments;
                         if (totalBendersPower > checkTotal) {
@@ -136,18 +136,19 @@ public class Main {
         int affinity = Integer.valueOf(parameters[3]);
         switch (typeMonument) {
             case "Air":
-                monument = new AirMonument(monumentName, affinity);
+                monument = new AirMonument(monumentName);
                 break;
             case "Water":
-                monument = new WaterMonument(monumentName, affinity);
+                monument = new WaterMonument(monumentName);
                 break;
             case "Fire":
-                monument = new FireMonument(monumentName, affinity);
+                monument = new FireMonument(monumentName);
                 break;
             case "Earth":
-                monument = new EarthMonument(monumentName, affinity);
+                monument = new EarthMonument(monumentName);
                 break;
         }
+        monument.setSecondElement(affinity);
         if (!monuments.containsKey(typeMonument)) {
             monuments.put(typeMonument, new LinkedList<>());
         }
@@ -161,18 +162,19 @@ public class Main {
         double secondaryParameter = Double.valueOf(parameters[4]);
         switch (typeBender) {
             case "Air":
-                bender = new AirBender(benderName, power, secondaryParameter);
+                bender = new AirBender(benderName, power);
                 break;
             case "Water":
-                bender = new WaterBender(benderName, power, secondaryParameter);
+                bender = new WaterBender(benderName, power);
                 break;
             case "Fire":
-                bender = new FireBender(benderName, power, secondaryParameter);
+                bender = new FireBender(benderName, power);
                 break;
             case "Earth":
-                bender = new EarthBender(benderName, power, secondaryParameter);
+                bender = new EarthBender(benderName, power);
                 break;
         }
+        bender.setSecondElement(secondaryParameter);
         if (!benders.containsKey(typeBender)) {
             benders.put(typeBender, new LinkedList<>());
         }

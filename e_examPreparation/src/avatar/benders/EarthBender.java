@@ -3,15 +3,18 @@ package avatar.benders;
 public class EarthBender extends Bender{
     private double groundSaturation;
 
-    public EarthBender(String name, double power, double groundSaturation) {
+    public EarthBender(String name, double power) {
         super(name, power);
-        this.groundSaturation = groundSaturation;
     }
 
+    @Override
+    public void setSecondElement(double secondElement) {
+        this.groundSaturation=secondElement;
+    }
 
     @Override
-    public double getPower() {
-        return this.groundSaturation*super.getPower();
+    public double getTotal() {
+        return super.getPower()*this.groundSaturation;
     }
 
     @Override

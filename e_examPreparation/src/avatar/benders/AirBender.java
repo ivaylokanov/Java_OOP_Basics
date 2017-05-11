@@ -4,9 +4,8 @@ package avatar.benders;
 public class AirBender extends Bender{
     private double aerialIntegirty;
 
-    public AirBender(String name, double power, double aerialIntegirty) {
+    public AirBender(String name, double power) {
         super(name, power);
-        this.aerialIntegirty=aerialIntegirty;
     }
 
     public void setAerialIntegirty(double aerialIntegirty) {
@@ -14,10 +13,14 @@ public class AirBender extends Bender{
     }
 
     @Override
-    public double getPower() {
-        return this.aerialIntegirty*super.getPower();
+    public void setSecondElement(double secondElement) {
+        this.aerialIntegirty=secondElement;
     }
 
+    @Override
+    public double getTotal() {
+        return super.getTotal()*this.aerialIntegirty;
+    }
 
     @Override
     public String toString() {

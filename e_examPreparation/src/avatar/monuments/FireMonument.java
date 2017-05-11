@@ -3,13 +3,17 @@ package avatar.monuments;
 public class FireMonument extends Monument {
     private double fireAffinity;
 
-    public FireMonument(String name,double fireAffinity) {
+    public FireMonument(String name) {
         super(name);
-        this.fireAffinity=fireAffinity;
     }
 
     @Override
-    public double getAffinity() {
+    public void setSecondElement(double secondElement) {
+        this.fireAffinity=secondElement;
+    }
+
+    @Override
+    public double getTotal() {
         return this.fireAffinity;
     }
 

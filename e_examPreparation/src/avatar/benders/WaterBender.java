@@ -4,14 +4,18 @@ package avatar.benders;
 public class WaterBender extends Bender {
     private double waterClarity;
 
-    public WaterBender(String name, double power,double waterClarity) {
+    public WaterBender(String name, double power) {
         super(name, power);
-        this.waterClarity=waterClarity;
     }
 
     @Override
-    public double getPower() {
-        return this.waterClarity*super.getPower();
+    public void setSecondElement(double secondElement) {
+        this.waterClarity=secondElement;
+    }
+
+    @Override
+    public double getTotal() {
+        return super.getTotal()*this.waterClarity;
     }
 
     @Override

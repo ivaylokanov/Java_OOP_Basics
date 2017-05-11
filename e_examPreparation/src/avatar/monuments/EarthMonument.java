@@ -3,13 +3,17 @@ package avatar.monuments;
 public class EarthMonument extends Monument{
     private double earthAffinity;
 
-    public EarthMonument(String name,double earthAffinity) {
+    public EarthMonument(String name) {
         super(name);
-        this.earthAffinity=earthAffinity;
     }
 
     @Override
-    public double getAffinity() {
+    public void setSecondElement(double secondElement) {
+        this.earthAffinity=secondElement;
+    }
+
+    @Override
+    public double getTotal() {
         return this.earthAffinity;
     }
 

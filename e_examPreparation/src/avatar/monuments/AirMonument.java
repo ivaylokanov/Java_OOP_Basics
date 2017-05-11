@@ -4,13 +4,17 @@ package avatar.monuments;
 public class AirMonument extends Monument{
     private double airAffinity;
 
-    public AirMonument(String name, double airAffinity) {
+    public AirMonument(String name) {
         super(name);
-        this.airAffinity=airAffinity;
     }
 
     @Override
-    public double getAffinity() {
+    public void setSecondElement(double secondElement) {
+        this.airAffinity=secondElement;
+    }
+
+    @Override
+    public double getTotal() {
         return this.airAffinity;
     }
 

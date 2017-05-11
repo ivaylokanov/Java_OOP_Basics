@@ -3,13 +3,17 @@ package avatar.monuments;
 public class WaterMonument extends Monument {
     private double waterAffinity;
 
-    public WaterMonument(String name,int waterAffinity) {
+    public WaterMonument(String name) {
         super(name);
-        this.waterAffinity=waterAffinity;
     }
 
     @Override
-    public double getAffinity() {
+    public void setSecondElement(double secondElement) {
+        this.waterAffinity=secondElement;
+    }
+
+    @Override
+    public double getTotal() {
         return this.waterAffinity;
     }
 

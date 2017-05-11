@@ -3,16 +3,18 @@ package avatar.benders;
 public class FireBender extends Bender{
     private double heatAggression;
 
-    public FireBender(String name, double power, double heatAggression) {
+    public FireBender(String name, double power) {
         super(name, power);
-        this.heatAggression = heatAggression;
     }
 
-
+    @Override
+    public void setSecondElement(double secondElement) {
+        this.heatAggression=secondElement;
+    }
 
     @Override
-    public double getPower() {
-        return this.heatAggression*super.getPower();
+    public double getTotal() {
+        return super.getTotal()*this.heatAggression;
     }
 
     @Override

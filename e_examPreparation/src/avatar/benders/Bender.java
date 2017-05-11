@@ -1,6 +1,8 @@
 package avatar.benders;
 
-public class Bender{
+import avatar.core.Factory;
+
+public class Bender implements Factory {
     private String name;
     private double power;
 
@@ -24,4 +26,13 @@ public class Bender{
         return super.toString();
     }
 
+    @Override
+    public void setSecondElement(double secondElement) {
+
+    }
+
+    @Override
+    public double getTotal() {
+        return this.power;
+    }
 }
