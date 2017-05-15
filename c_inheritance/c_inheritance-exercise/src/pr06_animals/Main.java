@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         List<Animal> animals = new ArrayList<>();
-        String animalType = "";
+        String animalType;
         while (!"Beast!".equals(animalType = reader.readLine())) {
             String[] arguments = reader.readLine().split("\\s+");
             String name = arguments[0];
@@ -18,33 +18,36 @@ public class Main {
             String gender = arguments[2];
             try {
                 Animal animal=null;
-                switch (animalType) {
-                    case "Cat":
+                switch (animalType.toLowerCase()) {
+                    case "cat":
                         animal = new Cat(name, age, gender);
                         break;
-                    case "Dog":
+                    case "dog":
                         animal = new Dog(name, age, gender);
                         break;
-                    case "Frog":
+                    case "frog":
                         animal = new Frog(name, age, gender);
                         break;
-                    case "Kitten":
-                        animal = new Kitten(name, age, gender);
+                    case "kitten":
+                        animal = new Kitten(name, age);
                         break;
-                    case "Tomcat":
-                        animal = new Tomcat(name, age, gender);
+                    case "tomcat":
+                        animal = new Tomcat(name, age);
                         break;
                     default:
                         throw new IllegalArgumentException("Invalid input!");
                 }
-                animals.add(animal);
+                System.out.println(animal);
+                System.out.println(animal.produceSound());
             } catch (IllegalArgumentException ex){
                 System.out.println(ex.getMessage());
             }
         }
-        for (Animal everyAnimal : animals) {
-            System.out.println(everyAnimal);
-            System.out.println(everyAnimal.produceSound());
+        if (!animals.isEmpty()) {
+            for (Animal everyAnimal : animals) {
+                System.out.println(everyAnimal);
+                System.out.println(everyAnimal.produceSound());
+            }
         }
     }
 }

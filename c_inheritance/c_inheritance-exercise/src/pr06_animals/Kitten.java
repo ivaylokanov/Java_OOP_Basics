@@ -1,8 +1,10 @@
 package pr06_animals;
 
-public class Kitten extends Animal{
-    public Kitten(String name, int age, String gender) {
-        super(name, age, gender);
+public class Kitten extends Cat{
+    private static final String GENDER = "Female";
+
+    public Kitten(String name, int age) {
+        super(name, age, GENDER);
     }
     @Override
     public String produceSound() {
