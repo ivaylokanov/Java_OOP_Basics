@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f61c4ce-1485-4b90-bfc2-47868fa0e5fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pr04_mordorsCrueltyPlan/Gandalf.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pr04_mordorsCrueltyPlan/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pr05_onlineRadioDatabase/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pr05_onlineRadioDatabase/Song.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1f61c4ce-1485-4b90-bfc2-47868fa0e5fc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -807,7 +801,7 @@
       <workItem from="1494537446670" duration="105000" />
       <workItem from="1494707536645" duration="66000" />
       <workItem from="1494707619123" duration="1221000" />
-      <workItem from="1494711890925" duration="22791000" />
+      <workItem from="1494711890925" duration="23010000" />
     </task>
     <task id="LOCAL-00001" summary="Java">
       <created>1494707810690</created>
@@ -827,7 +821,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24183000" />
+    <option name="totallyTimeSpent" value="24402000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
