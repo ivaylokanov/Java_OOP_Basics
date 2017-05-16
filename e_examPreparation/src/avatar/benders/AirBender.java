@@ -17,6 +17,8 @@ public class AirBender extends Bender{
         this.aerialIntegirty=secondElement;
     }
 
+
+
     @Override
     public double getTotal() {
         return super.getTotal()*this.aerialIntegirty;

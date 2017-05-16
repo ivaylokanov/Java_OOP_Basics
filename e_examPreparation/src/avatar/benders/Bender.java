@@ -2,7 +2,7 @@ package avatar.benders;
 
 import avatar.core.Factory;
 
-public class Bender implements Factory {
+public abstract class Bender implements Factory {
     private String name;
     private double power;
 

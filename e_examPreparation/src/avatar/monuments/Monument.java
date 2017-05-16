@@ -2,7 +2,7 @@ package avatar.monuments;
 
 import avatar.core.Factory;
 
-public class Monument implements Factory{
+public abstract class Monument implements Factory{
     private String name;
 
     public Monument(String name) {
