@@ -1,14 +1,14 @@
 package pr_03_wildFarm;
 
 public abstract class Animal {
-    private String animalName;
     private String animalType;
+    private String animalName;
     private double animalWeight;
     private int foodEaten;
 
-    public Animal(String animalName, String animalType, double animalWeight, int foodEaten) {
-        this.animalName = animalName;
+    public Animal(String animalType, String animalName, double animalWeight, int foodEaten) {
         this.animalType = animalType;
+        this.animalName = animalName;
         this.animalWeight = animalWeight;
         this.foodEaten = foodEaten;
     }

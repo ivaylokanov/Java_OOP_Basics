@@ -23,7 +23,7 @@ public class Truck extends Vehicle {
         double neededFuel = super.getFuelConsumationInLiterPerKm() * parameter;
         if (super.getFuelQuantity() >= neededFuel) {
             setFuelQuantity(super.getFuelQuantity() - neededFuel);
-            sb.append("Truck travelled ").append(df.format(parameter)).append(" km").append("\r\n");
+            sb.append(String.format("%s travelled ",getClass().getSimpleName())).append(df.format(parameter)).append(" km").append("\r\n");
             System.out.print(sb.toString());
         } else {
 
