@@ -1,22 +1,27 @@
 package pr_03_wildFarm;
 
-public class Mammal extends Animal {
+import java.text.DecimalFormat;
+
+public abstract class Mammal extends Animal {
+
     private String livingRegion;
 
-    public Mammal(String animalType, String animalName, double animalWeight, int foodEaten,String livingRegion) {
-        super(animalType, animalName, animalWeight, foodEaten);
-        this.livingRegion=livingRegion;
-
-    }
-
-
-    @Override
-    public void makeSound() {
-
+    public Mammal(String animalName, String animalType, Double animalWeight, String livingRegion) {
+        super(animalName, animalType, animalWeight);
+        this.setLivingRegion(livingRegion);
     }
 
     @Override
-    public void eat(Food food) {
+    public String toString() {
+        return String.format("%s[%s, %s, %s, %d]", super.getAnimalType(), super.getAnimalName(),
+                new DecimalFormat("0.######").format(super.getAnimalWeight()), this.getLivingRegion(), super.getFoodEaten());
+    }
 
+    protected String getLivingRegion() {
+        return this.livingRegion;
+    }
+
+    private void setLivingRegion(String livingRegion) {
+        this.livingRegion = livingRegion;
     }
 }

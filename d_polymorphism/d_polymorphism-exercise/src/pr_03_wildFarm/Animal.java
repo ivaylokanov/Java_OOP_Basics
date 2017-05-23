@@ -1,19 +1,51 @@
 package pr_03_wildFarm;
 
 public abstract class Animal {
-    private String animalType;
     private String animalName;
-    private double animalWeight;
-    private int foodEaten;
+    private String animalType;
+    private Double animalWeight;
+    private Integer foodEaten;
 
-    public Animal(String animalType, String animalName, double animalWeight, int foodEaten) {
-        this.animalType = animalType;
-        this.animalName = animalName;
-        this.animalWeight = animalWeight;
+    public Animal(String animalName, String animalType, Double animalWeight) {
+        this.setAnimalName(animalName);
+        this.setAnimalType(animalType);
+        this.setAnimalWeight(animalWeight);
+        this.setFoodEaten(0);
+    }
+
+    abstract void makeSound();
+    abstract void eat(Food food);
+
+    protected Integer getFoodEaten() {
+        return this.foodEaten;
+    }
+
+    protected void setFoodEaten(Integer foodEaten) {
         this.foodEaten = foodEaten;
     }
 
-    public abstract void makeSound();
-    public abstract void eat(Food food);
+    protected String getAnimalName() {
+        return this.animalName;
+    }
+
+    protected Double getAnimalWeight() {
+        return this.animalWeight;
+    }
+
+    protected String getAnimalType() {
+        return animalType;
+    }
+
+    private void setAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
+
+    private void setAnimalType(String animalType) {
+        this.animalType = animalType;
+    }
+
+    private void setAnimalWeight(Double animalWeight) {
+        this.animalWeight = animalWeight;
+    }
 
 }

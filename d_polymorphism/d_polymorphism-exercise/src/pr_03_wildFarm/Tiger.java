@@ -1,18 +1,18 @@
 package pr_03_wildFarm;
 
-public class Zebra extends Mammal{
-    public Zebra(String animalName, String animalType, Double animalWeight, String livingRegion) {
+public class Tiger extends Felime{
+    public Tiger(String animalName, String animalType, Double animalWeight, String livingRegion) {
         super(animalName, animalType, animalWeight, livingRegion);
     }
 
     @Override
     void makeSound() {
-        System.out.println("Zs");
+        System.out.println("ROAAR!!!");
     }
 
     @Override
     void eat(Food food) {
-        if (!food.getClass().getSimpleName().equals("Vegetable")) {
+        if (!food.getClass().getSimpleName().equals("Meat")) {
             throw new IllegalArgumentException(this.getClass().getSimpleName() + "s are not eating that type of food!");
         }
 

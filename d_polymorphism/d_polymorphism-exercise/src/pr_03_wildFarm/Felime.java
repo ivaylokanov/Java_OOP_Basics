@@ -1,8 +1,9 @@
 package pr_03_wildFarm;
 
 
-public class Felime extends Mammal{
-    public Felime(String animalType, String animalName, double animalWeight, int foodEaten, String livingRegion) {
-        super(animalType, animalName, animalWeight, foodEaten, livingRegion);
+public abstract class Felime extends Mammal{
+
+    public Felime(String animalName, String animalType, Double animalWeight, String livingRegion) {
+        super(animalName, animalType, animalWeight, livingRegion);
     }
 }
