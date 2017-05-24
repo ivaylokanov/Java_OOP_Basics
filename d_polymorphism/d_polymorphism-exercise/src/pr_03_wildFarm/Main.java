@@ -34,7 +34,7 @@ public class Main {
                     default:
                         throw new IllegalArgumentException("Invalid animal type!");
                 }
-
+//test
                 String[] foodArgs = reader.readLine().split(" ");
                 String foodType = foodArgs[0];
                 Integer quantity = Integer.parseInt(foodArgs[1]);
