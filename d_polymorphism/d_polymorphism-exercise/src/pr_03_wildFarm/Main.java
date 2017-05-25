@@ -15,9 +15,10 @@ public class Main {
             String name = animalArgs[1];
             Double weight = Double.parseDouble(animalArgs[2]);
             String livingRegion = animalArgs[3];
-
+//test
             try {
                 Animal animal;
+                
                 switch (animalType) {
                     case "Mouse":
                         animal = new Mouse(name, animalType, weight, livingRegion);
