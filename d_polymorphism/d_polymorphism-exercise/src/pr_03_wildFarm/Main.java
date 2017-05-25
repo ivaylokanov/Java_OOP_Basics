@@ -18,7 +18,7 @@ public class Main {
 //test
             try {
                 Animal animal;
-                
+
                 switch (animalType) {
                     case "Mouse":
                         animal = new Mouse(name, animalType, weight, livingRegion);
